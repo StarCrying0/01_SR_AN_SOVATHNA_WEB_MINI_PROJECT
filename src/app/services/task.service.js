@@ -19,3 +19,44 @@ export const getAllTaskByWorkspaceId = async (workspaceId) => {
     console.log(error);
   }
 };
+
+export const changeTaskStatus = async (id, updateStatus) => {
+  try {
+    const session = await getServerSession(Authentication);
+    const res = await fetch(
+      `http://110.74.194.123:8989/api/todo/v1/tasks/change-status/${id}`,
+      {
+        method: "PUT",
+        next: { tags: ["task"] },
+        headers: {
+          authorization: `Bearer ${session?.user?.token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updateStatus),
+      }
+    );
+    const data = await res.json();
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const deleteTaskByWorkspaceId = async(id,workId) =>{
+  const session = await getServerSession(Authentication);
+  try {
+    const res = await fetch(  
+      `http://110.74.194.123:8989/api/todo/v1/tasks/deleteTaskByWorkspaceIdAndTaskId/${workId}/${id}`,
+      {
+        method: "DELETE",
+        next: { tags: ["task"] },
+        headers: {
+          authorization: `Bearer ${session?.user?.token}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const data = await res.json();
+  } catch (error) {
+    console.log(error);
+  }
+}

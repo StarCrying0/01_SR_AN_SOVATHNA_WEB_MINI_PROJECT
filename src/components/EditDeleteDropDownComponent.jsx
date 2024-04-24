@@ -1,10 +1,10 @@
 "use client";
 
-import { deleteWorkspace } from "@/app/action/addnew";
+import { deleteTask, deleteWorkspace } from "@/app/action/addnew";
 import Image from "next/image";
 import React from "react";
 
-export default function EditDeleteDropDownComponent({ id }) {
+export default function EditDeleteDropDownComponent({ id,workId,details }) {
   return (
     <details className="dropdown">
       <summary className=" btn bg-white shadow-none border-0 p-0 h-0 min-h-0">
@@ -20,7 +20,10 @@ export default function EditDeleteDropDownComponent({ id }) {
           <button>Edit</button>
         </li>
         <li>
-          <button onClick={()=>deleteWorkspace(id)}>Delete</button>
+          <button onClick={()=>{
+            details!=="deleteTask"?
+            deleteWorkspace(id):deleteTask(id,workId)
+            }}>Delete</button>
         </li>
       </ul>
     </details>

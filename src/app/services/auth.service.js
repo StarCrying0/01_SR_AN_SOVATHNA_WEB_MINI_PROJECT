@@ -20,7 +20,6 @@ export const registerService = async (userInfo) => {
                 'Content-Type' : 'application/json',
             },
         })
-        console.log("2")
         const data = await res.json();
         return data;
     } catch (error) {   

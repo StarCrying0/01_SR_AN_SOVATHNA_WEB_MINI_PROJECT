@@ -11,7 +11,7 @@ async function ToDoList() {
     <>
       <div className="flex w-full h-full">
         <div className="w-[25%] h-full">
-          <SidebarComponent data={workspaceData.data} link={"/todo-list"}/>
+          <SidebarComponent data={workspaceData.data} link={"/todo-list"} details={"workspace"}/>
         </div>
         <div className="w-[75%] h-full pl-5">
           <NavbarComponent />

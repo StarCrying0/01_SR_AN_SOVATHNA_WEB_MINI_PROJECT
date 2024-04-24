@@ -10,7 +10,7 @@ async function Task({params}) {
     <>
       <div className="flex w-full h-full">
         <div className="w-[25%] h-full">
-          <SidebarComponent data={workspaceData.data} link={"/todo-board"}/>
+          <SidebarComponent data={workspaceData.data} link={"/todo-board"} details={"deleteFromBoard"}/>
         </div>
         <div className="w-[75%] h-full pl-5">
           <NavbarComponent />
@@ -19,7 +19,7 @@ async function Task({params}) {
               src="https://sofontsy.com/cdn/shop/products/welcome-cutting-file-for-farmhouse-sign-welcome-sign-greeting-sign-svg-dxf-and-more-glowforge-laser-ready-svg-diva-watts-designs-306122_1024x.jpg?v=1617077597"
               className="w-[50%]"
             ></img> */}
-            <ListBoardComponentHeader/>
+            <ListBoardComponentHeader name={"Board"} id={params.id}/>
             <BoardComponent id={params.id}/>
           </div>
         </div>

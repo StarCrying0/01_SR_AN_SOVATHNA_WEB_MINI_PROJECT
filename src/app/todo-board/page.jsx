@@ -10,7 +10,7 @@ async function ToDoBoard() {
     <>
       <div className="flex w-full h-full">
         <div className="w-[25%] h-full">
-          <SidebarComponent data={workspaceData.data} link={"todo-board"} />
+          <SidebarComponent data={workspaceData.data} link={"todo-board"} details={"deleteFromBoard"}/>
         </div>
         <div className="w-[75%] h-full pl-5">
           <NavbarComponent />

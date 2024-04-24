@@ -11,13 +11,13 @@ async function ToDoListById({params}) {
     <>
       <div className="flex w-full h-full">
         <div className="w-[25%] h-full">
-          <SidebarComponent data={workspaceData.data} link={"/todo-list"}/>
+          <SidebarComponent data={workspaceData.data} link={"/todo-list"} details={"workspace"}/>
         </div>
         <div className="w-[75%] h-full pl-5">
           <NavbarComponent />
           <div className="w-full flex justify-between">
             <div className="p-5 w-[60%]">
-              <ListBoardComponentHeader/>
+              <ListBoardComponentHeader name={"Workspace"} id={params.id}/>
               <TaskComponent data={params.id} />
             </div>
             <div className="w-[35%]">

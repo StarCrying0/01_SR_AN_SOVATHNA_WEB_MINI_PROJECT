@@ -2,7 +2,6 @@ import { getAllTaskByWorkspaceId } from "@/app/services/task.service";
 
 async function TaskComponent({ data }) {
   const getAllTask = await getAllTaskByWorkspaceId(data);
-  console.log(getAllTask);
   return (
     <>
       {getAllTask.data.map((allTask) => {

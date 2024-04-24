@@ -4,7 +4,7 @@ import EditDeleteDropDownComponent from "./EditDeleteDropDownComponent";
 import WorkspacePopupComponent from "./WorkspacePopupComponent";
 import Link from "next/link";
 
-export default function SidebarComponent({ data,link }) {
+export default function SidebarComponent({ data,link,details }) {
 
   const favoriteWorkspaces = data.filter(workSpace => workSpace.isFavorite);
   return (
@@ -26,7 +26,7 @@ export default function SidebarComponent({ data,link }) {
           <div className="rounded-full w-4 h-4 bg-todo"></div>
           <div className="flex justify-between w-full pl-3">
             <Link href={`${link}/${workSpace.workSpaceId}`}>{workSpace.workspaceName}</Link>
-            <EditDeleteDropDownComponent id={workSpace.workSpaceId} />
+            <EditDeleteDropDownComponent id={workSpace.workSpaceId} details={details}/>
           </div>
         </div>
       ))}
