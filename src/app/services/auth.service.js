@@ -11,7 +11,6 @@ export  const loginService  = async (userInfo) => {
     return data;
 }
 export const registerService = async (userInfo) => {
-    console.log(userInfo);
     try {
         const res = await fetch("http://110.74.194.123:8989/api/todo/v1/auth/sign-up",{
             method : 'POST',
@@ -20,6 +19,7 @@ export const registerService = async (userInfo) => {
                 'Content-Type' : 'application/json',
             },
         })
+        console.log("hello")
         const data = await res.json();
         return data;
     } catch (error) {   

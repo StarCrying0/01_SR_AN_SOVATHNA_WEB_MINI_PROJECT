@@ -1,40 +1,7 @@
 "use client";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { signIn, signOut } from "next-auth/react";
-import { registerService } from "@/app/services/auth.service";
+import handleRegister from "@/app/action/registerAction";
 function RegisterPage() {
-  const router = useRouter();
-
-  async function handleRegister(userInfo) {
-    if (userInfo.get("password") !== userInfo.get("cPassword")) {
-      const password = document.getElementById("password");
-      const cPassword = document.getElementById("cPassword");
-      cPassword.className = "border py-2 px-4 rounded-lg w-full border-red-800";
-      password.className = "border py-2 px-4 rounded-lg w-full border-red-800";
-      alert("Passwords do not match");
-      return;
-    }
-    const newUserInfo = {
-      firstname: userInfo.get("firstName"),
-      lastname: userInfo.get("lastName"),
-      gender: userInfo.get("gender"),
-      profile_url: "string",
-      email: userInfo.get("email"),
-      password: userInfo.get("password"),
-    };
-    await registerService(newUserInfo);
-    // const res = await signIn("credentials", {
-    //   redirect: false,
-    //   ...newUserInfo,
-    // });
-    // console.log(res)
-    // if (res?.status == 200) {
-    //   router.push("/login");
-    // }else{
-    //   alert("Account already exists");
-    // }
-  }
   return (
     <>
       <div className="w-[80%] mx-auto">

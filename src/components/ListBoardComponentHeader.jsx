@@ -8,7 +8,7 @@ export default async function ListBoardComponentHeader({ name, id }) {
   return (
     <>
       <div className="text-gray flex text-lg gap-3 mb-5">
-        <p>{name}</p> / <p>{workspaceData.data.workspaceName}</p> / <p>List</p>
+        <p>{name}</p> / <p>{workspaceData.data?.workspaceName}</p> / <p>List</p>
       </div>
       <div className="flex justify-between">
         <h2 className="text-2xl font-bold">HRD Design</h2>

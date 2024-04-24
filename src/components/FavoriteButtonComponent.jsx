@@ -14,14 +14,13 @@ function FavoriteButton({ id, data }) {
         //changeStarColor.className = "bx bx-star text-2xl";
       favorite = { isFavorite: "true" };
     }
-    console.log(favorite);
     addFavoriteWorkSpace(id, favorite);
   };
   return (
     <>
       <button onClick={handleClick}>
         <div className="border border-gray rounded-lg p-1 flex justify-center items-center">
-          <i className={`${data.data.isFavorite===false?"bx bx-star text-2xl":"bx bxs-star text-2xl text-yellow-300"}`} id="star"></i>
+          <i className={`${data.data?.isFavorite===false?"bx bx-star text-2xl":"bx bxs-star text-2xl text-yellow-300"}`} id="star"></i>
         </div>
       </button>
     </>

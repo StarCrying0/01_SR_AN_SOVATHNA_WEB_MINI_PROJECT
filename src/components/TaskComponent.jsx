@@ -4,7 +4,7 @@ async function TaskComponent({ data }) {
   const getAllTask = await getAllTaskByWorkspaceId(data);
   return (
     <>
-      {getAllTask.data.map((allTask) => {
+      {getAllTask.data?.map((allTask) => {
         const months = [
           "Jan",
           "Feb",
